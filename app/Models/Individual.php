@@ -6,21 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Model
+class Individual extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name', 'email', 'password', 'remember_token', 'status'
+        'first_name', 'last_name', 'phone_number', 'address'
     ];
 
     public function clients()
     {
-        return $this->hasMany(Client::class);
+        return $this->morphMany(Client::class, 'clientable');
     }
 
     public function transporters()
     {
-        return $this->hasMany(Transporter::class);
+        return $this->morphMany(Transporter::class, 'transportable');
     }
 }
