@@ -21,7 +21,15 @@
         @if (Route::has('login'))
             <livewire:welcome.navigation />
         @endif
-
+        <div class="relative flex flex-column">
+            <form action="" method="POST">
+                <input type="text" name="cargo-title" id="cargo-title">
+                <input type="text" name="cargo-desc" id="cargo-desc">
+                <input type="text" name="cargo-quantity" id="cargo-quantity">
+                <input type="text" name="cargo-height" id="cargo-height">
+                <input type="text" name="cargo-weight" id="cargo-weight">
+            </form>
+        </div>
     </div>
     </div>
 </body>
