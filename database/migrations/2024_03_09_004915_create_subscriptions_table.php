@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('trucker_id')->constrained('transporters');
+            $table->foreignId('transporter_id')->constrained('transporters');
             $table->string('type');
             $table->date('start_date');
             $table->date('end_date');

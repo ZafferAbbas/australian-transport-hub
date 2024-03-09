@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::middleware(['auth'])->group(function () {
+    
+});
+Route::resource('users', UserController::class);
 Route::view('/', 'welcome');
 
 Route::view('dashboard', 'dashboard')
